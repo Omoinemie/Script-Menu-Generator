@@ -865,10 +865,10 @@ main_menu
             
             // 添加语法高亮
             const highlightedScript = scriptContent
-                。replace(/(^#.*$)/gm, '<span class="code-comment">$1</span>')
-                。replace(/\b(echo|read|case|esac|do|done|if|fi|then|else|while|for|in|function|local|return)\b/g, '<span class="code-keyword">$1</span>')
-                。replace(/(\".*?\")/g, '<span class="code-string">$1</span>')
-                。replace(/(show_header|execute_command_group|main_menu|command_menu)\b/g, '<span class="code-function">$1</span>');
+                .replace(/(^#.*$)/gm, '<span class="code-comment">$1</span>')
+                .replace(/\b(echo|read|case|esac|do|done|if|fi|then|else|while|for|in|function|local|return)\b/g, '<span class="code-keyword">$1</span>')
+                .replace(/(\".*?\")/g, '<span class="code-string">$1</span>')
+                .replace(/(show_header|execute_command_group|main_menu|command_menu)\b/g, '<span class="code-function">$1</span>');
             
             // 显示预览
             const previewContainer = document.getElementById('preview-container');
@@ -986,7 +986,7 @@ main_menu
             
             // 解析命令组
             const commandGroupPattern = /case\s+"\$index"\s+in\s+([\s\S]*?)\s+esac/g;
-            const caseMatch = commandGroupPattern。exec(scriptContent);
+            const caseMatch = commandGroupPattern.exec(scriptContent);
             
             if (caseMatch && caseMatch[1]) {
                 const groupPattern = /(\d+)\)\s+#\s*Base64编码的命令组\s+encoded_cmds="([^"]+)"\s+#\s*解码并显示命令[\s\S]*?echo -e\s+"\\n\\033\[1;32m命令组:\s*([^"]+)\\033/g;
